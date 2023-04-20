@@ -3,11 +3,9 @@ import json
 import numpy as np
 import pickle
 import sys
-#sys.path.append('/data/kenlay/GraphSiamese/')
 from src.model import GraphSiamese
 from src.embedding import GCN
 import torch
-#from scripts.compute_baselines import WL_distance, distance_procrustes_LE, distance_frobenius
 import scipy.sparse as ss
 import argparse
 from datetime import datetime

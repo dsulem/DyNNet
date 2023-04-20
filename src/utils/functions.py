@@ -1,4 +1,3 @@
-#sys.path.append('/data/kenlay/GraphSiamese/utils/')
 import numpy as np
 import networkx as nx
 import torch

@@ -1,7 +1,4 @@
 import sys
-
-#sys.path.append('~/PycharmProjects/GraphSiamese/')
-#sys.path.append('~/data/localhost/sulem/GraphSiamese/')
 from src.embedding import GCN, MLP
 import torch.nn as nn
 import torch

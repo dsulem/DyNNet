@@ -1,6 +1,4 @@
 import sys
-#sys.path.append('/Users/sulem/PycharmProjects/GraphSiamese/')
-#sys.path.append('/data/localhost/sulem/GraphSiamese/')
 from src.model import GraphSiamese
 from src.embedding import GCN, GINConv
 import argparse
@@ -44,8 +42,6 @@ def train(args=None):
     process = psutil.Process(os.getpid())
 
     # load data
-    # if isinstance(args.training_data, str):
-    #     args.training_data = PosixPath(args.training_data).expanduser()
     with open(args.training_data + '/data.p', 'rb') as f:
         data = pickle.load(f)
     with open(args.training_data + '/labels.p', 'rb') as f:
@@ -57,8 +53,6 @@ def train(args=None):
 
     # load validation data
     if args.validation_data is not None:
-        # if isinstance(args.validation_data, str):
-        #     args.validation_data = PosixPath(args.validation_data).expanduser()
         with open(args.validation_data + '/data.p', 'rb') as f:
             validation_data = pickle.load(f)
         with open(args.validation_data + '/labels.p', 'rb') as f:
@@ -103,22 +97,6 @@ def train(args=None):
     else:
         training_data_pairs = sample_pairs_in_window(training_data, training_labels, window_length=args.window_length)
         validation_data_pairs = sample_pairs_in_window(validation_data, validation_labels, window_length=args.window_length)
-
-    # Transform into DataSet object
-    # training_pairs_labels = [training_data_pairs[i][2].item() for i in range(len(training_data_pairs))]
-    # validation_pairs_labels = [validation_data_pairs[i][2].item() for i in range(len(validation_data_pairs))]
-    # os.makedirs(args.training_data + '/training_pairs')
-    # os.makedirs(args.training_data + '/validation_pairs')
-    # with open(args.training_data + '/training_pairs/data.p', 'wb') as f:
-    #     pickle.dump(training_data_pairs)
-    # with open(args.training_data + '/training_pairs/labels.p', 'wb') as f:
-    #     pickle.load(training_pairs_labels)
-    # with open(args.training_data + '/validation_pairs/data.p', 'wb') as f:
-    #     pickle.dump(validation_data_pairs)
-    # with open(args.training_data + '/validation_pairs/labels.p', 'wb') as f:
-    #     pickle.load(validation_pairs_labels)
-    # training_data_pairs = GraphPairsDataset(args.training_data + '/training_pairs/')
-    # validation_data_pairs = GraphPairsDataset(args.training_data + '/validation_pairs/')
 
     training_data_pairs = DataLoader(training_data_pairs, batch_size=args.batch_size, shuffle=True, collate_fn=collate,
                                drop_last=True)
