@@ -1,9 +1,8 @@
-# Experimental stuff
+# Experimental data
 data/
-results/
-notebook/
-scripts/
+results/synthetic/
 .idea/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
