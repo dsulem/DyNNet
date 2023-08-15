@@ -1,11 +1,11 @@
-# Experimental stuff
+# Experimental data
 data/
-results/
-notebooks/
-scripts/
+trash
+results/synthetic/
 .idea/
 
 .DS_Store
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
