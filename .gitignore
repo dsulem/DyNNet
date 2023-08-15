@@ -1,8 +1,11 @@
 # Experimental stuff
 data/
+
 results/synthetic
 scripts/
 .idea/
+
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
