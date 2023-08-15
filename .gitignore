@@ -1,7 +1,6 @@
 # Experimental stuff
 data/
-results/
-notebook/
+results/synthetic
 scripts/
 .idea/
 
